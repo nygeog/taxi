@@ -8,9 +8,11 @@ def date_range(start, end):
 dropList = ['medallion','hack_license','vendor_id','rate_code','store_and_fwd_flag','passenger_count','trip_time_in_secs']
 typeList = ['pickup','dropoff']
 
-for i in range(2,13):
+for i in range(3,13):
 	inCSV = '/Users/danielmsheehan/Desktop/tripData2013/trip_data_'+str(i)+'.csv'
-	df = pd.read_csv(i).drop(dropList, axis=1) #nrows=200000
+	df = pd.read_csv(inCSV)
+	df = df.rename(columns=lambda x: x.replace(' ', ''))
+	df = df.drop(dropList, axis=1) #nrows=200000
 	print 'read complete'
 
 	print 'add new col'
@@ -32,7 +34,7 @@ for i in range(2,13):
 	end = datetime.date(yearEnd,monthEnd,01)
 	dateList = date_range(start, end)
 	for k in dateList:
-		outCSV = '/Users/danielmsheehan/Desktop/tripData2013/day/trip_data_1_'+str(k).replace('-','')+'.csv'
+		outCSV = '/Users/danielmsheehan/Desktop/tripData2013/day/trip_data_'+str(i)+'_'+str(k).replace('-','')+'.csv'
 		#m = k.split('-')[0]
 		y = str(k)[0:4]
 		m = str(k)[5:7]
