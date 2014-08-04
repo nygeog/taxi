@@ -5,15 +5,11 @@ def date_range(start, end):
     r = (end+datetime.timedelta(days=1)-start).days
     return [start+datetime.timedelta(days=i) for i in range(r)]
 
-csvList = ['/Users/danielmsheehan/Desktop/tripData2013/trip_data_1.csv']
-#will change this to be a range 1-12 for motnsh
 dropList = ['medallion','hack_license','vendor_id','rate_code','store_and_fwd_flag','passenger_count','trip_time_in_secs']
 typeList = ['pickup','dropoff']
 
-print 'just working with January data for now'
-
-for i in csvList:
-	 #'' + i
+for i in range(2,13):
+	inCSV = '/Users/danielmsheehan/Desktop/tripData2013/trip_data_'+str(i)+'.csv'
 	df = pd.read_csv(i).drop(dropList, axis=1) #nrows=200000
 	print 'read complete'
 
@@ -23,8 +19,17 @@ for i in csvList:
 		df[j+'_date'] = df[j+'_datetime'].map(pd.Timestamp.date)
 		df = df.drop(j+'_datetime', axis=1)
 
-	start = datetime.date(2013,01,01)
-	end = datetime.date(2013,02,01)
+	monthStart = i
+	yearStart  = 2013
+	if i > 11:
+		monthEnd = 1
+		yearEnd  = 2014
+	else:
+		monthEnd = i + 1
+		yearEnd  = 2013
+
+	start = datetime.date(yearStart,monthStart,01)
+	end = datetime.date(yearEnd,monthEnd,01)
 	dateList = date_range(start, end)
 	for k in dateList:
 		outCSV = '/Users/danielmsheehan/Desktop/tripData2013/day/trip_data_1_'+str(k).replace('-','')+'.csv'
