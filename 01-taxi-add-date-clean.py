@@ -9,7 +9,7 @@ def date_range(start, end):
 dropList = ['medallion','hack_license','vendor_id','rate_code','store_and_fwd_flag','passenger_count','trip_time_in_secs']
 typeList = ['pickup','dropoff']
 
-for i in range(3,13):
+for i in range(2,13):
 	inCSV = '/Users/danielmsheehan/Desktop/tripData2013/trip_data_'+str(i)+'.csv'
 	df = pd.read_csv(inCSV)
 	df = df.rename(columns=lambda x: x.replace(' ', ''))
@@ -35,7 +35,7 @@ for i in range(3,13):
 	end = datetime.date(yearEnd,monthEnd,01)
 	dateList = date_range(start, end)
 	for k in dateList:
-		outCSV = '/Users/danielmsheehan/Desktop/tripData2013/day/trip_data_'+str(i)+'_'+str(k).replace('-','')+'.csv'
+		outCSV = '/Users/danielmsheehan/Desktop/tripData2013/day/trip_data_'+str(k).replace('-','')+'_m'+str(i)+'.csv'
 		#m = k.split('-')[0]
 		y = str(k)[0:4]
 		m = str(k)[5:7]
@@ -48,13 +48,13 @@ for i in range(3,13):
 		#df = df.
 		dft.to_csv(outCSV, index=False)
 	
-for i in range(1,13):
+for i in range(2,13):
 	if i < 10:
 		k = '20130'+ str(i+1) + '01'
 	elif i == 12:
 		k = '20140101'
 	else:
 		k = '2013'+ str(i+1) + '01'
-	delCSV = '/Users/danielmsheehan/Desktop/tripData2013/day/trip_data_'+str(i)+'_'+k+'.csv'
+	delCSV = '/Users/danielmsheehan/Desktop/tripData2013/day/trip_data_'+k+'_m'+str(i)+'.csv'
 	os.remove(delCSV)
 
