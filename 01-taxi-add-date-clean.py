@@ -1,5 +1,6 @@
 import pandas as pd
 import datetime
+import os
 
 def date_range(start, end):
     r = (end+datetime.timedelta(days=1)-start).days
@@ -46,4 +47,14 @@ for i in range(3,13):
 		print 'save as csv for ' + str(k)
 		#df = df.
 		dft.to_csv(outCSV, index=False)
-		
+	
+for i in range(1,13):
+	if i < 10:
+		k = '20130'+ str(i+1) + '01'
+	elif i == 12:
+		k = '20140101'
+	else:
+		k = '2013'+ str(i+1) + '01'
+	delCSV = '/Users/danielmsheehan/Desktop/tripData2013/day/trip_data_'+str(i)+'_'+k+'.csv'
+	os.remove(delCSV)
+
