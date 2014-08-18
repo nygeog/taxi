@@ -7,12 +7,13 @@ csv_dir = 'Z:/Desktop/tripData2013/day/'
 wd      = 'Z:/Desktop/tripData2013/'
 
 monthList = ['01','02','03','04','05','06','07','08','09','10','11','12']
+monthList = ['03']
 
 print 'for pickups and dropoffs'
 for m in monthList:
         #arcpy.CreateFileGDB_management(wd, "taxi_2013"+m+".gdb")
         for a_csv in glob.glob(csv_dir+"trip_data_2013"+m+"*.csv"):
-                print a_csv
+                #print a_csv
                 tripDay = a_csv[38:46] #   Z:/Desktop/tripData2013/day/trip_data_20130201_m1.csv
                 print tripDay
                 gdb = wd+"taxi_2013"+m+".gdb"
