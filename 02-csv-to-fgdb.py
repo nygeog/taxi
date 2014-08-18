@@ -35,6 +35,7 @@ for m in monthList:
                 print 'near analysis for dropoffs to street centerline'
                 arcpy.Near_analysis(gdb+"/trip_"+tripDay+"_d_xy_prj","W:/GIS/Data/Municipal/USA/New_York/New_York_City/Streets_Centerline/20140609/CSCL_PUB_Centerline/CSCL_PUB_Centerline.shp","1000 Feet","LOCATION","ANGLE")
 
+arcpy.GenerateNearTable_analysis("Z:/Desktop/tripData2013/taxi_201301.gdb/trip_20130101_d_xy_prj","W:/GIS/Data/Municipal/USA/New_York/New_York_City/Roadbed/ROADBED.shp","Z:/Desktop/tripData2013/taxi_201301.gdb/trip_20130101_d_xy_prj_Gener","1000 Feet","LOCATION","ANGLE","CLOSEST","0")
 
                 print 'near analysis to roadbed'
                 arcpy.Near_analysis(gdb+"/trip_"+tripDay+"_d_xy_prj","W:/GIS/Data/Municipal/USA/New_York/New_York_City/Roadbed/ROADBED.shp","1000 Feet","LOCATION","ANGLE")
