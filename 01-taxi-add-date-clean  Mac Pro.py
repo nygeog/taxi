@@ -17,7 +17,10 @@ outCSVSamp = wd+'trip_data_1_samp.csv'
 dfS = pd.read_csv(inCSVSamp, nrows=100)
 dfS.to_csv(outCSVSamp, index=False)
 
-for i in range(2,13):
+
+###RUN FOR JANUARY - meh actually don't need to 
+
+for i in range(12,13):
 	inCSV = wd+'trip_data_'+str(i)+'.csv'
 	df = pd.read_csv(inCSV)
 	df = df.rename(columns=lambda x: x.replace(' ', ''))
