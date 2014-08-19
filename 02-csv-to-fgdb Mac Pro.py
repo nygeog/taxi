@@ -13,8 +13,8 @@ print 'for pickups and dropoffs'
 for m in monthList:
         #arcpy.CreateFileGDB_management(wd, "taxi_2013"+m+".gdb")
         for a_csv in glob.glob(csv_dir+"trip_data_2013"+m+"*.csv"):
-                #print a_csv
-                tripDay = a_csv[38:46] #   Z:/Desktop/tripData2013/day/trip_data_20130201_m1.csv
+                print a_csv
+                tripDay = a_csv[40:48] #   Z:/Desktop/tripData2013/day/trip_data_20130201_m1.csv #THIS RANGE IS DIFF> BASED ON DIRECTROY LENGTH
                 print tripDay
                 gdb = wd+"taxi_2013"+m+".gdb"
                 # print 'table to table - bring in csv'
