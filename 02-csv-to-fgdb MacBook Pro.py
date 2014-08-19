@@ -2,9 +2,10 @@ import arcpy, time, datetime, csv, sys, traceback
 from arcpy import env
 env.overwriteOutput = True
 import glob
+from datetime import datetime
 
-csv_dir = 'Z:/Desktop/tripData2013/day/'
-wd      = 'Z:/Desktop/tripData2013/'
+csv_dir = 'Y:/Desktop/tripData2013/day/'
+wd      = 'Y:/Desktop/tripData2013/'
 
 monthList = ['01','02','03','04','05','06','07','08','09','10','11','12']
 monthList = ['11']
@@ -35,8 +36,10 @@ for m in monthList:
                 #arcpy.Near_analysis(gdb+"/trip_"+tripDay+"_p_xy_prj","W:/GIS/Data/Municipal/USA/New_York/New_York_City/Streets_Centerline/20140609/CSCL_PUB_Centerline/CSCL_PUB_Centerline.shp","1000 Feet","LOCATION","ANGLE")
                 #print 'near analysis for dropoffs to street centerline'
                 #arcpy.Near_analysis(gdb+"/trip_"+tripDay+"_d_xy_prj","W:/GIS/Data/Municipal/USA/New_York/New_York_City/Streets_Centerline/20140609/CSCL_PUB_Centerline/CSCL_PUB_Centerline.shp","1000 Feet","LOCATION","ANGLE")
+                print str(datetime.now())
                 print 'near analysis to roadbed pickups'
                 arcpy.GenerateNearTable_analysis(gdb+"/trip_"+tripDay+"_p_xy_prj","W:/GIS/Data/Municipal/USA/New_York/New_York_City/Roadbed_copy/ROADBED.shp",gdb+"/trip_"+tripDay+"_p_road","1000 Feet","LOCATION","ANGLE","CLOSEST","0")
+                print str(datetime.now())
                 print 'near analysis to roadbed dropoffs'
                 arcpy.GenerateNearTable_analysis(gdb+"/trip_"+tripDay+"_d_xy_prj","W:/GIS/Data/Municipal/USA/New_York/New_York_City/Roadbed/ROADBED.shp",gdb+"/trip_"+tripDay+"_d_road","1000 Feet","LOCATION","ANGLE","CLOSEST","0")
 
