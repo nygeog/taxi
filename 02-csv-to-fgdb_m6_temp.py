@@ -8,7 +8,7 @@ csv_dir = 'Z:/Desktop/tripData2013/day/'
 wd      = 'Z:/Desktop/tripData2013/'
 
 monthList = ['01','02','03','04','05','06','07','08','09','10','11','12']
-monthList = ['04']
+monthList = ['06']
 
 print 'for pickups and dropoffs'
 for m in monthList:
@@ -18,7 +18,7 @@ for m in monthList:
                 tripDay = a_csv[38:46] #   Z:/Desktop/tripData2013/day/trip_data_20130201_m1.csv
                 print tripDay
                 gdb = wd+"taxi_2013"+m+".gdb"
-                print 'table to table - bring in csv'
+                #print 'table to table - bring in csv'
                 #arcpy.TableToTable_conversion(a_csv,gdb,"trip_"+tripDay)
                 #print 'pickup make xy event layer for pickups'
                 #arcpy.MakeXYEventLayer_management(gdb+"/trip_"+tripDay,"pickup_longitude","pickup_latitude","trip_"+tripDay+"_pickup_Layer","GEOGCS['GCS_WGS_1984',DATUM['D_WGS_1984',SPHEROID['WGS_1984',6378137.0,298.257223563]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433],METADATA['World',-180.0,-90.0,180.0,90.0,0.0,0.0174532925199433,0.0,1262]];-400 -400 1000000000;-100000 10000;-100000 10000;8.98315284119522E-09;0.001;0.001;IsHighPrecision","#")
