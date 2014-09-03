@@ -1,3 +1,7 @@
 05 months took 639934.7s
 06 months took 619096.3s
 
+at 2 CPU’s
+
+
+then did 3 CPU’s
