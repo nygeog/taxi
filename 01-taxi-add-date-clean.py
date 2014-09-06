@@ -17,7 +17,7 @@ outCSVSamp = wd+'trip_data_1_samp.csv'
 dfS = pd.read_csv(inCSVSamp, nrows=100)
 dfS.to_csv(outCSVSamp, index=False)
 
-for i in range(2,13):
+for i in range(1,13): #CHANGED THIS FTOM 2,13 to 1,13 not sure why it was at 2, maybe ran throught the 1 (jan) at one point
 	inCSV = wd+'trip_data_'+str(i)+'.csv'
 	df = pd.read_csv(inCSV)
 	df = df.rename(columns=lambda x: x.replace(' ', ''))
