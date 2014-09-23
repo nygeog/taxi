@@ -1,5 +1,28 @@
-taxi
-====
+#Taxi
+
+Near functions use local projection system. 
+NAD 83 (feet) State Plane New York, Long Island
+
+##Geodatabase Structure
+
+
+Each day has a file
+######trip_^^^^^^ 
+input day file, with pickup and dropoff x,y data, with trip distance data.
+######trip_^^^^^^_d_road
+Dropoff - near function on roadbed, 0 distance indicates within roadbed. 
+######trip_^^^^^^_d_xy
+Dropoff - xy brought in as lat,lng. 
+######trip_^^^^^^_d_xy_prj
+Dropoff - xy projected with near road centerline FID. 
+######trip_^^^^^^_p_road
+Pickup - near function on roadbed, 0 distance indicates within roadbed.
+######trip_^^^^^^_p_xy
+Pickup - xy brought in as lat,lng. 
+######trip_^^^^^^_p_xy_prj
+Pickup - xy projected with near road centerline FID.
+
+##Number of Trips by Month
 for month 1, the count of taxi trips is:
 14776615
 month 1 has 31 number of days, averaging 476665.0 taxi trips per day
