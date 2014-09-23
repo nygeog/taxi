@@ -3,6 +3,13 @@
 Near functions use local projection system. 
 NAD 83 (feet) State Plane New York, Long Island
 
+##To Do:
+1) Find out how many dropoffs & pickups have outside NYC lat/lngs (or invalid - null island)
+
+2) Export using 
+
+	
+
 ##Geodatabase Structure
 
 
