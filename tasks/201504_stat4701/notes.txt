@@ -1,3 +1,6 @@
 plot subset of similar census blocks, plot just parks
 
 inverse prob. reweighteing. 
+
+
+logisti regression.
