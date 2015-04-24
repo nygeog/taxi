@@ -1,0 +1,3 @@
+GLM - generalize linear model. 
+
+K Means Clustering. compare K MEans, centroids by P-Value
