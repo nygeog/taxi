@@ -1,1 +1,5 @@
 convert   -delay 200   -loop 0 img/png/*.png img/gif/dist_bldg_hght_ani.gif
+
+
+#too install
+# brew install imagemagick
